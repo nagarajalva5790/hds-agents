@@ -68,7 +68,7 @@ export function Sidebar({ isSidebarOpen, toggleSidebar }: { isSidebarOpen: boole
       <ul className="space-y-2 p-4">
         {agents.map((agent, index) => (
           <li key={index}>
-            <div className="flex items-center gap-2 p-2 hover:bg-gray-700 rounded cursor-pointer">
+            <div className="flex items-center gap-2 p-2 hover:bg-[#99000C] rounded cursor-pointer">
               {agent.icon}
               <span>{agent.name}</span>
             </div>
