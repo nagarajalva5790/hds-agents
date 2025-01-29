@@ -93,7 +93,7 @@ export function ChatWindow({
           <Paperclip size={20} />
         </Button>
         <Button variant="ghost" className="p-1 md:p-2">
-          <Image size={20} />
+          <Image size={20} alt-text='' />
         </Button>
         <Input
           value={input}

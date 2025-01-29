@@ -9,7 +9,7 @@ export default function ChatGPTUI() {
   ]);
 
   const [input, setInput] = useState<string>("");
-  const [isSidebarOpen, setIsSidebarOpen] = useState(window.innerWidth > 768);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   const handleSend = () => {
     if (!input.trim()) return;

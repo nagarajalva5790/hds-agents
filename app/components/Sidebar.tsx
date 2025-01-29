@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
-import { ListCollapse, UserCircle, Plus, Search } from "lucide-react";
 import Image from "next/image";
-import { Coffee, Code, Book, Music, Film } from "lucide-react";
+import { Coffee, Code, Book, Music, Film, ListCollapse, Plus, Search } from "lucide-react";
 
 import { AddAgentPopup } from "./AddAgentPopup";
 import { SearchPopup } from "./SearchPopup";
 
 export function Sidebar({ isSidebarOpen, toggleSidebar }: { isSidebarOpen: boolean; toggleSidebar: () => void }) {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isMobile, setIsMobile] = useState(false);
 
   const [isAddAgentPopupVisible, setAddAgentPopupVisible] = useState(false);
   const [isSearchPopupVisible, setSearchPopupVisible] = useState(false);
@@ -55,7 +54,7 @@ export function Sidebar({ isSidebarOpen, toggleSidebar }: { isSidebarOpen: boole
         {/* Search and Add Agent Icons */}
         <div className="flex gap-4">
           <Search size={24} className="cursor-pointer" onClick={openSearchPopup} />
-          <Plus size={24} className="cursor-pointer" onClick={openAddAgentPopup}/>
+          <Plus size={24} className="cursor-pointer" onClick={openAddAgentPopup} />
         </div>
       </div>
 
@@ -69,11 +68,9 @@ export function Sidebar({ isSidebarOpen, toggleSidebar }: { isSidebarOpen: boole
       <ul className="space-y-2 p-4">
         {agents.map((agent, index) => (
           <li key={index}>
-            <div
-              className={`cursor-pointer hover:bg-[#99000C] p-2 rounded flex items-center space-x-2`}
-            >
+            <div className="flex items-center gap-2 p-2 hover:bg-gray-700 rounded cursor-pointer">
               {agent.icon}
-              <span className="font-bold">{agent.name}</span>
+              <span>{agent.name}</span>
             </div>
           </li>
         ))}
